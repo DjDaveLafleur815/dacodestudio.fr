@@ -34,6 +34,8 @@ class QuoteController extends Controller
             'user_message' => $request->message,
         ];
 
+        \App\Models\Quote::create($data);
+
         Mail::send('emails.quote', $data, function ($mail) use ($data) {
             $mail->to('david.dharma815@outlook.fr', 'D-A Code Studio')
                 ->subject('💼 Nouvelle demande de devis - D-A Code Studio')

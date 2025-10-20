@@ -7,6 +7,7 @@ use App\Http\Controllers\Web\ProjectController;
 use App\Http\Controllers\Web\BlogController;
 use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\QuoteController;
+use App\Http\Controllers\Admin\QuotePdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,4 @@ Route::post('/contact', [ContactController::class, 'submitForm'])->name('contact
 Route::get('/devis', [QuoteController::class, 'showForm'])->name('quote.show');
 Route::post('/devis', [QuoteController::class, 'submitForm'])->name('quote.submit');
 
+Route::get('/admin/quotes/{id}/pdf', [QuotePdfController::class, 'generate'])->name('admin.quotes.pdf');
